@@ -1,0 +1,22 @@
+# requirements-modal.txt
+# Runtime deps for the Modal deployment (see modal_app.py).
+# torch is installed separately (CPU wheel) inside the Modal image build.
+
+# Backend
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+
+# Dense model (fine-tuned SigLIP 2 + LoRA)
+transformers>=4.49
+peft>=0.19
+sentencepiece
+Pillow
+
+# Sparse model (SPLADE) + vector DB
+fastembed
+qdrant-client
+
+# Optional hosted Redis cache (enabled with ENABLE_REDIS in modal_app.py)
+redis

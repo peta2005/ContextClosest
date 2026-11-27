@@ -1,0 +1,27 @@
+# Core search engine: data prep, training, indexing, API.
+# Big data pipeline extras (Spark, Kafka, Redis): requirements-bigdata.txt
+# Modal deployment image: requirements-modal.txt
+
+# Data preparation
+pandas>=2.0.0
+pyarrow>=12.0.0
+tqdm
+
+# Models: fine-tuned SigLIP 2 (dense) + SPLADE (sparse)
+torch
+torchvision
+transformers
+peft
+accelerate
+fastembed
+Pillow
+
+# Vector database
+qdrant-client
+
+# API and cloud
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+boto3

@@ -1,0 +1,97 @@
+# ---------------------------------------------------------------------------
+# Data — never commit. Pulled from S3 / Qdrant Cloud at runtime.
+# ---------------------------------------------------------------------------
+Raw_Data/
+Processed_Data/
+embeddings/
+faiss_index/
+checkpoints/
+
+# ---------------------------------------------------------------------------
+# Secrets
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.env
+secrets.yaml
+config_local.yaml
+!.env.example
+
+# ---------------------------------------------------------------------------
+# Model artifacts and large binaries
+#   Exception: the small LoRA adapter under deploy/ is committed on purpose
+#   so the Hugging Face Space can load it without Processed_Data/.
+# ---------------------------------------------------------------------------
+models/
+*.npy
+*.npz
+*.faiss
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.h5
+*.hdf5
+*.onnx
+*.onnx.data
+*.safetensors
+*.zip
+!deploy/
+!deploy/**
+!deploy/lora_adapter/*.safetensors
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# ---------------------------------------------------------------------------
+# Virtual environments
+# ---------------------------------------------------------------------------
+env/
+venv/
+.venv/
+conda-env/
+*.conda
+
+# ---------------------------------------------------------------------------
+# Notebooks / logs / temp
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb
+*.log
+*.tmp
+*.bak
+logs/
+tmp/
+temp/
+
+# ---------------------------------------------------------------------------
+# OS / IDE
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.suo
+*.user
+
+# ---------------------------------------------------------------------------
+# Personal / course documents kept locally, not published
+# ---------------------------------------------------------------------------
+docs/*.docx
+docs/*.pdf
+docs/coursework_paper.tex
+docs/extracted_doc.txt
+scripts/build_documentation_v2.py
